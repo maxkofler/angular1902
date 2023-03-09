@@ -14,6 +14,6 @@ if ! [ -d $1 ]; then
 fi
 
 cp -v $DIRNAME/Dockerfile $1/
-sed -i "s/RUN adduser -D USER/RUN adduser -D $USER/g" $1/Dockerfile
+sed -i "s/USER/$USER/g" $1/Dockerfile
 cp -v $DIRNAME/.devcontainer.json $1/
-sed -i "s/\"remoteUser\": \"USER\"/\"remoteUser\": \"$USER\"/g" $1/.devcontainer.json
+sed -i "s/USER/$USER/g" $1/.devcontainer.json

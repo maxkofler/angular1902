@@ -1,0 +1,27 @@
+
+version: '3'
+
+services:
+  node:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/USERNAME
+    tty: true
+    networks:
+      - net
+
+  db:
+    image: mariadb
+    networks:
+      - net
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=USERNAME
+      - MYSQL_PASSWORD=USERNAME
+    volumes:
+      - ./db:/var/lib/mysql
+
+networks:
+  net:

@@ -1,0 +1,8 @@
+{
+    "name": "compose",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "node",
+    "workspaceFolder": "/home/USER",
+    "remoteUser": "USER",
+    "updateRemoteUserUID": true
+}
